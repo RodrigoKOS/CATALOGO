@@ -9,9 +9,9 @@ export function Header() {
   const [search, setSearch] = useState("");
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-zinc-200">
+    <header className="sticky top-0 z-50 bg-[#ff2c2d] backdrop-blur border-b border-zinc-200">
       {/* top bar */}
-      <div className="bg-[#ff2c2d] text-zinc-100 text-xs text-center py-1.5 px-4">
+      <div className="bg-balck text-zinc-100 text-xs text-center py-1.5 px-4">
         <span className="hidden sm:inline">Frete e montagem grátis — consulte cidades participantes • </span>
         <a href={`tel:${siteConfig.phone}`} className="underline-offset-2 hover:underline">
           {siteConfig.phone}
