@@ -1,48 +1,32 @@
-"use client";
-import { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { banners } from "@/data/banners";
+import type { Banner } from "@/types/product";
 
-export function HeroCarousel() {
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const next = useCallback(() => setIndex((i) => (i + 1) % banners.length), []);
-  const prev = useCallback(() => setIndex((i) => (i - 1 + banners.length) % banners.length), []);
-  useEffect(() => {
-    if (paused) return;
-    const t = setInterval(next, 5000);
-    return () => clearInterval(t);
-  }, [paused, next]);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const onTouchStart = (e: React.TouchEvent) => setTouchStart(e.touches[0].clientX);
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchStart == null) return;
-    const diff = e.changedTouches[0].clientX - touchStart;
-    if (diff > 50) prev();
-    if (diff < -50) next();
-    setTouchStart(null);
-  };
-  return (
-    <section aria-label="Produtos recém-chegados" className="relative overflow-hidden rounded-none sm:rounded-2xl bg-zinc-900">
-      <div className="relative h-[420px] sm:h-[460px] lg:h-[480px]" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-        {banners.map((b, i) => (
-          <Link key={b.id} href={b.href} className={`absolute inset-0 transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0 pointer-events-none"}`} aria-hidden={i !== index} aria-label={b.titulo}>
-            <Image src={b.imagem} alt={b.titulo} fill priority={i === 0} sizes="100vw" className="object-cover" />
-          </Link>
-        ))}
-        <button onClick={prev} aria-label="Slide anterior" className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2.5 hover:bg-white hidden sm:inline-flex">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button onClick={next} aria-label="Próximo slide" className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2.5 hover:bg-white hidden sm:inline-flex">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {banners.map((_, i) => (
-            <button key={i} onClick={() => setIndex(i)} aria-label={`Ir para slide ${i + 1}`} aria-current={i === index} className={`h-2 rounded-full transition-all ${i === index ? "w-7 bg-white" : "w-2 bg-white/60 hover:bg-white"}`} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+{
+  titulo: "Sofá Retrátil Premium", // vira alt da imagem
+  imagem: "https://images.unsplash.com/...", // troque pela sua URL ou /banners/banner1.jpg se enviar em public/banners/
+  href: "/produto/sofa-retratil-3-lugares-bege-premium", // destino ao clicar
 }
+  {
+    id: "1",
+    titulo: "Sofá Retrátil Premium com 25% OFF",
+    descricao: "Conforto, estilo e entrega grátis. Oferta por tempo limitado.",
+    imagem: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1600&auto=format&fit=crop",
+    cta: "Ver produto",
+    href: "/produto/sofa-retratil-3-lugares-bege-premium",
+  },
+  {
+    id: "2",
+    titulo: "Renove sua cozinha completa",
+    descricao: "Armários, mesas e eletros com montagem grátis.",
+    imagem: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1600&auto=format&fit=crop",
+    cta: "Conferir ofertas",
+    href: "/categoria/cozinha",
+  },
+  {
+    id: "3",
+    titulo: 'Smart TV 50" 4K a partir de R$ 1.899',
+    descricao: "Qualidade de cinema na sua sala. Garanta já a sua!",
+    imagem: "https://images.unsplash.com/photo-1593359677879-a4bb92f367d8?q=80&w=1600&auto=format&fit=crop",
+    cta: "Ver TV",
+    href: "/produto/smart-tv-50-4k-uhd",
+  },
+];
