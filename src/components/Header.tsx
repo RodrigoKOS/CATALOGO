@@ -77,7 +77,8 @@ export function Header() {
                 }
               }}
             >
-              <img src="/whatsapp.png" alt="WhatsApp" className="h-[18px] w-[18px]" />
+             <img src="/whatsapp.png" alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain" />
+WhatsApp
             </a>
 
             {/* mobile menu button */}
