@@ -1,6 +1,6 @@
 import type { Product } from "@/types/product";
 
-export const products: Product[] = [[
+export const products: Product[] = [
   {
     "id": "1787865893449",
     "nome": "Cadeira cadeira",
@@ -275,7 +275,7 @@ export const products: Product[] = [[
     "disponivel": true,
     "ordem": 12
   }
-]],
+],
     especificacoes: {
       Material: "Suede + Madeira eucalipto",
       Lugares: "3 lugares",
