@@ -26,7 +26,7 @@ export function Header() {
          <img src="/logo.png" alt="Sua Loja" className="h-9 w-auto" />
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-700">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-100">
             <Link href="/" className="hover:text-zinc-900">Início</Link>
             <Link href="/categorias" className="hover:text-zinc-900">Categorias</Link>
             <Link href="/produtos" className="hover:text-zinc-900">Produtos</Link>
