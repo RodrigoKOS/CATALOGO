@@ -1,10 +1,6 @@
 import type { Banner } from "@/types/product";
 
-{
-  titulo: "Sofá Retrátil Premium", // vira alt da imagem
-  imagem: "https://images.unsplash.com/...", // troque pela sua URL ou /banners/banner1.jpg se enviar em public/banners/
-  href: "/produto/sofa-retratil-3-lugares-bege-premium", // destino ao clicar
-}
+export const banners: Banner[] = [
   {
     id: "1",
     titulo: "Sofá Retrátil Premium com 25% OFF",
