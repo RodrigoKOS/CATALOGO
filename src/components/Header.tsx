@@ -23,12 +23,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label={`${siteConfig.name} - início`}>
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-900 text-white font-bold text-lg">M</span>
-            <span className="font-bold text-xl tracking-tight text-zinc-900">
-              Move<span className="text-orange-600">Lar</span>
-            </span>
-          </Link>
+         <img src="/logo.png" alt="Sua Loja" className="h-9 w-auto" />
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-700">
