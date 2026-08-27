@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-zinc-200">
       {/* top bar */}
-      <div className="bg-zinc-900 text-zinc-100 text-xs text-center py-1.5 px-4">
+      <div className="bg-[#ff2c2d] text-zinc-100 text-xs text-center py-1.5 px-4">
         <span className="hidden sm:inline">Frete e montagem grátis — consulte cidades participantes • </span>
         <a href={`tel:${siteConfig.phone}`} className="underline-offset-2 hover:underline">
           {siteConfig.phone}
