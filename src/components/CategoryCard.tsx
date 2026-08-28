@@ -25,10 +25,10 @@ export function CategoryCard({ category }: { category: Category }) {
       href={`/categoria/${category.slug}`}
       className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6 hover:shadow-md hover:border-zinc-300 transition-all text-center"
     >
-      <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 text-white group-hover:bg-orange-600 transition-colors">
+      <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 text-white group-hover:bg-[#ff2c2d] transition-colors">
         {icons[category.slug] ?? icons["sala-jantar"]}
       </span>
-      <h3 className="text-sm font-semibold text-zinc-900 group-hover:text-orange-600">{category.nome}</h3>
+      <h3 className="text-sm font-semibold text-zinc-900 group-hover:text-[#ff2c2d]">{category.nome}</h3>
     </Link>
   );
 }
