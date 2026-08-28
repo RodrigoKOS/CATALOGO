@@ -16,7 +16,9 @@ export default function CategoriasPage() {
       <Breadcrumbs items={[{ label: "Início", href: "/" }, { label: "Categorias" }]} />
       <h1 className="mt-6 text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">Todas as categorias</h1>
       <p className="mt-2 text-sm text-zinc-500">Escolha uma categoria e encontre o produto ideal</p>
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
+      <div className="mt-6 flex flex-wrap justify-center gap-4">
+  {categories.map((c) => (
+    <div key={c.slug} className="w-[calc(50%-8px)] sm:w-[180px]">
         {categories.map((c) => (
           <CategoryCard key={c.slug} category={c} />
         ))}
