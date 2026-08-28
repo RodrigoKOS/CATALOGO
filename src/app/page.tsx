@@ -12,13 +12,11 @@ export default function Home() {
 
   return (
     <div className="bg-zinc-50">
-      {/* Hero */}
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 sm:pt-6">
         <HeroCarousel />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-10 sm:space-y-14">
-        {/* Categorias */}
         <section aria-labelledby="categorias-heading">
           <div className="flex items-end justify-between gap-4">
             <div>
@@ -28,11 +26,11 @@ export default function Home() {
             <Link href="/categorias" className="hidden sm:inline-flex text-sm font-semibold text-zinc-900 hover:text-orange-600">Ver todas →</Link>
           </div>
 
-         <div className="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4">
-  {categories.map((c) => (
-    <div key={c.slug} className="w-[calc(50%-6px)] sm:w-[160px] lg:w-[180px]">
+          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4">
             {categories.map((c) => (
-              <CategoryCard key={c.slug} category={c} />
+              <div key={c.slug} className="w-[calc(50%-6px)] sm:w-[160px] lg:w-[180px]">
+                <CategoryCard category={c} />
+              </div>
             ))}
           </div>
           <div className="sm:hidden mt-4 text-center">
@@ -40,7 +38,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Mais buscados */}
         <section aria-labelledby="mais-buscados-heading">
           <div className="flex items-end justify-between">
             <div>
@@ -56,10 +53,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Beneficios */}
         <BenefitsBar />
 
-        {/* Recem chegados destaque */}
         <section aria-labelledby="ofertas-heading">
           <div className="flex items-end justify-between">
             <h2 id="ofertas-heading" className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900">Ofertas da semana</h2>
@@ -72,7 +67,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SEO texto */}
         <section className="rounded-2xl bg-white border border-zinc-200 p-6 sm:p-8">
           <h2 className="text-lg font-bold text-zinc-900">Móveis e eletrodomésticos com o melhor preço</h2>
           <p className="mt-3 text-sm leading-6 text-zinc-600">
