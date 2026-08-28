@@ -22,7 +22,8 @@ export type Category = {
   id: string;
   nome: string;
   slug: string;
-  imagem: string;
+  imagem?: string;
+  icone?: string;
   descricao?: string;
 };
 
